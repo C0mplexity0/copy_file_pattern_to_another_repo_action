@@ -39,7 +39,7 @@ runs:
   using: 'composite'
   steps:
     - name: Copy files
-      run: ./entrypoint.sh
+      run: entrypoint.sh
       shell: bash
       env: 
         INPUT_SOURCE_PATTERN: ${{ inputs.source-pattern }}
