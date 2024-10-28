@@ -7,5 +7,3 @@ RUN apk update && \
 ADD entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
-
-USER runner
