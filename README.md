@@ -1,35 +1,39 @@
 # copy_file_to_another_repo_action
-This GitHub Action copies a file from the current repository to a location in another repository
+This GitHub Action copies a file, or a series of files, from the current repository to a location in another repository
+
+This is a fork of [dmnemec/copy_file_to_another_repo_action](https://github.com/dmnemec/copy_file_to_another_repo_action), with the only difference being that it works with glob patterns rather than just single files.
 
 # Example Workflow
-    name: Push File
+```yaml
+name: Push File
 
-    on: push
+on: push
 
-    jobs:
-      copy-file:
-        runs-on: ubuntu-latest
-        steps:
-        - name: Checkout
-          uses: actions/checkout@v2
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
 
-        - name: Pushes test file
-          uses: dmnemec/copy_file_to_another_repo_action@main
-          env:
-            API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-          with:
-            source_file: 'test2.md'
-            destination_repo: 'dmnemec/release-test'
-            destination_folder: 'test-dir'
-            user_email: 'example@email.com'
-            user_name: 'dmnemec'
-            commit_message: 'A custom message for the commit'
+    - name: Pushes test file
+      uses: c0mplexity0/copy_file_pattern_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_pattern: './testfiles/foo.!(rst)'
+        destination_repo: 'c0mplexity0/release-test'
+        destination_folder: 'test-dir'
+        user_email: 'example@email.com'
+        user_name: 'c0mplexity0'
+        commit_message: 'A custom message for the commit'
+```
 
 # Variables
 
 The `API_TOKEN_GITHUB` needs to be set in the `Secrets` section of your repository options. You can retrieve the `API_TOKEN_GITHUB` [here](https://github.com/settings/tokens) (set the `repo` permissions).
 
-* source_file: The file or directory to be moved. Uses the same syntax as the `rsync` command. Incude the path for any files not in the repositories root directory.
+* source_pattern: The glob pattern of the files or directories to be moved. Uses the same syntax as the `rsync` command. Incude the path for any files not in the repositories root directory.
 * destination_repo: The repository to place the file or directory in.
 * destination_folder: [optional] The folder in the destination repository to place the file in, if not the root directory.
 * user_email: The GitHub user email associated with the API token secret.
