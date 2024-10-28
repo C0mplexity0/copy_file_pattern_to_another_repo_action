@@ -24,4 +24,3 @@ jobs:
         destination_repo: 'c0mplexity0/release-test'
         user_email: '106925362+C0mplexity0@users.noreply.github.com'
         user_name: 'C0mplexity0'
-        rename: 'test02_rename.md'
