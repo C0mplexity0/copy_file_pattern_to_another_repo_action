@@ -1,9 +1,9 @@
 name: Push File
 
-on: [pull_request]
+on: [push, pull_request]
 
 env:
-    sha: $GITHUB_SHA
+  sha: $GITHUB_SHA
 
 jobs:
   copy-file:
@@ -24,9 +24,9 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source_file: 'test01.md'
-        destination_repo: 'dmnemec/release-test'
-        user_email: 'devin.nemec@gmail.com'
-        user_name: 'dmnemec'
+        destination_repo: 'c0mplexity0/release-test'
+        user_email: '106925362+C0mplexity0@users.noreply.github.com'
+        user_name: 'C0mplexity0'
 
     - name: Push changed file
       uses: ./
@@ -34,9 +34,9 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source_file: 'test02.md'
-        destination_repo: 'dmnemec/release-test'
-        user_email: 'devin.nemec@gmail.com'
-        user_name: 'dmnemec'
+        destination_repo: 'c0mplexity0/release-test'
+        user_email: '106925362+C0mplexity0@users.noreply.github.com'
+        user_name: 'C0mplexity0'
 
     - name: Check custom commit message
       uses: ./
@@ -44,9 +44,9 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source_file: 'test03.md'
-        destination_repo: 'dmnemec/release-test'
-        user_email: 'devin.nemec@gmail.com'
-        user_name: 'dmnemec'
+        destination_repo: 'c0mplexity0/release-test'
+        user_email: '106925362+C0mplexity0@users.noreply.github.com'
+        user_name: 'C0mplexity0'
         commit_message: 'A custom message.'
 
     - name: Check rsync runs
@@ -55,9 +55,9 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source_file: 'test04.md'
-        destination_repo: 'dmnemec/release-test'
-        user_email: 'devin.nemec@gmail.com'
-        user_name: 'dmnemec'
+        destination_repo: 'c0mplexity0/release-test'
+        user_email: '106925362+C0mplexity0@users.noreply.github.com'
+        user_name: 'C0mplexity0'
         use_rsync: 'true'
 
     - name: Push renamed file
@@ -66,7 +66,7 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source_file: 'test02.md'
-        destination_repo: 'dmnemec/release-test'
-        user_email: 'devin.nemec@gmail.com'
-        user_name: 'dmnemec'
+        destination_repo: 'c0mplexity0/release-test'
+        user_email: '106925362+C0mplexity0@users.noreply.github.com'
+        user_name: 'C0mplexity0'
         rename: 'test02_rename.md'
