@@ -1,4 +1,4 @@
-# copy_file_to_another_repo_action
+# copy_file_pattern_to_another_repo_action
 This GitHub Action copies a file, or a series of files, from the current repository to a location in another repository
 
 This is a fork of [dmnemec/copy_file_to_another_repo_action](https://github.com/dmnemec/copy_file_to_another_repo_action), with the only difference being that it works with glob patterns rather than just single files.
