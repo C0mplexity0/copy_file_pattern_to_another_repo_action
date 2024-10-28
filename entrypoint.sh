@@ -43,7 +43,7 @@ for file in $INPUT_SOURCE_PATTERN; do
     mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER
     if [ -z "$INPUT_USE_RSYNC" ]
     then
-        cp -R "$INPUT_SOURCE_FILE" "$DEST_COPY"
+        cp -R "$GITHUB_WORKSPACE/$INPUT_SOURCE_FILE" "$DEST_COPY"
     else
         echo "rsync mode detected"
         rsync -avrh "$INPUT_SOURCE_FILE" "$DEST_COPY"
