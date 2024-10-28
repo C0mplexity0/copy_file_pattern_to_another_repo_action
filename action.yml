@@ -38,7 +38,6 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  she
   args:
     - ${{ inputs.source-pattern }}
     - ${{ inputs.destination-repo }}
