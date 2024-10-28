@@ -1,5 +1,5 @@
-name: 'Push a file to another repository'
-description: 'Used for pushing a copy of a file to another repository'
+name: 'Push a file or series of files to another repository'
+description: 'Used for pushing a copy of a file or a series of files to another repository'
 inputs:
   source_pattern:
     description: 'Source pattern from the origin directory'
