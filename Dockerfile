@@ -1,7 +1,6 @@
 FROM alpine
 
 ADD entrypoint.sh /entrypoint.sh
-ADD copy.sh /copy.sh
 
 RUN apk update && \
     apk upgrade && \
