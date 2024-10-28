@@ -9,4 +9,4 @@ RUN apk update && \
     chmod +x /entrypoint.sh && \
     set -x
 
-ENTRYPOINT [ "/bin/bash", "-c", "/entrypoint.sh" ]
+ENTRYPOINT [ "bash", "/entrypoint.sh" ]
