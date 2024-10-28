@@ -70,3 +70,14 @@ jobs:
         user_email: '106925362+C0mplexity0@users.noreply.github.com'
         user_name: 'C0mplexity0'
         rename: 'test02_rename.md'
+
+    - name: Push pattern
+      uses: ./
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_file: 'testfiles/foo.!(rst)'
+        destination_repo: 'c0mplexity0/release-test'
+        user_email: '106925362+C0mplexity0@users.noreply.github.com'
+        user_name: 'C0mplexity0'
+        rename: 'test02_rename.md'
