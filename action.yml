@@ -35,20 +35,26 @@ inputs:
     description: 'Git server host, default github.com'
     required: false
     default: github.com
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.source-pattern }}
-    - ${{ inputs.destination-repo }}
-    - ${{ inputs.destination-folder }}
-    - ${{ inputs.user-email }}
-    - ${{ inputs.destination-branch }}
-    - ${{ inputs.destination-branch-create }}
-    - ${{ inputs.commit-message }}
-    - ${{ inputs.git-server }}
-    - ${{ inputs.rename }}
-    - ${{ inputs.use-rsync }}
+jobs:
+  setup-bash:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: release-engineers/action-setup-bash@v1
+  run-docker:
+    runs-on: ubuntu-latest
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+      - ${{ inputs.source-pattern }}
+      - ${{ inputs.destination-repo }}
+      - ${{ inputs.destination-folder }}
+      - ${{ inputs.user-email }}
+      - ${{ inputs.destination-branch }}
+      - ${{ inputs.destination-branch-create }}
+      - ${{ inputs.commit-message }}
+      - ${{ inputs.git-server }}
+      - ${{ inputs.rename }}
+      - ${{ inputs.use-rsync }}
 branding:
   icon: 'git-commit'
   color: 'green'
