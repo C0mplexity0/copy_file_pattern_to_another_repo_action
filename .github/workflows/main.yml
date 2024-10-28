@@ -26,7 +26,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_file: 'test01.md'
+        source_pattern: 'test01.md'
         destination_repo: 'c0mplexity0/release-test'
         user_email: '106925362+C0mplexity0@users.noreply.github.com'
         user_name: 'C0mplexity0'
@@ -36,7 +36,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_file: 'test02.md'
+        source_pattern: 'test02.md'
         destination_repo: 'c0mplexity0/release-test'
         user_email: '106925362+C0mplexity0@users.noreply.github.com'
         user_name: 'C0mplexity0'
@@ -46,7 +46,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_file: 'test03.md'
+        source_pattern: 'test03.md'
         destination_repo: 'c0mplexity0/release-test'
         user_email: '106925362+C0mplexity0@users.noreply.github.com'
         user_name: 'C0mplexity0'
@@ -57,7 +57,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_file: 'test04.md'
+        source_pattern: 'test04.md'
         destination_repo: 'c0mplexity0/release-test'
         user_email: '106925362+C0mplexity0@users.noreply.github.com'
         user_name: 'C0mplexity0'
@@ -68,7 +68,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_file: 'test02.md'
+        source_pattern: 'test02.md'
         destination_repo: 'c0mplexity0/release-test'
         user_email: '106925362+C0mplexity0@users.noreply.github.com'
         user_name: 'C0mplexity0'
@@ -79,7 +79,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_file: 'testfiles/foo.!(rst)'
+        source_pattern: 'testfiles/foo.!(rst)'
         destination_repo: 'c0mplexity0/release-test'
         user_email: '106925362+C0mplexity0@users.noreply.github.com'
         user_name: 'C0mplexity0'
