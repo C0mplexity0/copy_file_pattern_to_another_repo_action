@@ -3,8 +3,7 @@ FROM alpine
 RUN apk update && \
     apk upgrade && \
     apk add git rsync && \
-    sudo usermod -a -G docker runner
-    
+    chmod +x entrypoint.sh
 
 ADD entrypoint.sh /entrypoint.sh
 
