@@ -39,20 +39,19 @@ runs:
   using: 'composite'
   steps:
     - name: Copy files
-      uses: docker://Dockerfile
+      run: ./entrypoint.sh
       shell: bash
-      with:
-        args:  
-          - ${{ inputs.source-pattern }}
-          - ${{ inputs.destination-repo }}
-          - ${{ inputs.destination-folder }}
-          - ${{ inputs.user-email }}
-          - ${{ inputs.destination-branch }}
-          - ${{ inputs.destination-branch-create }}
-          - ${{ inputs.commit-message }}
-          - ${{ inputs.git-server }}
-          - ${{ inputs.rename }}
-          - ${{ inputs.use-rsync }}
+      env: 
+        INPUT_SOURCE_PATTERN: ${{ inputs.source-pattern }}
+        INPUT_DESTINATION_REPO: ${{ inputs.destination-repo }}
+        INPUT_DESTINATION_FOLDER: ${{ inputs.destination-folder }}
+        INPUT_USER_EMAIL: ${{ inputs.user-email }}
+        INPUT_DESTINATION_BRANCH: ${{ inputs.destination-branch }}
+        INPUT_DESTINATION_BRANCH_CREATE: ${{ inputs.destination-branch-create }}
+        INPUT_COMMIT_MESSAGE: ${{ inputs.commit-message }}
+        INPUT_GIT_SERVER: ${{ inputs.git-server }}
+        INPUT_RENAME: ${{ inputs.rename }}
+        INPUT_USE_RSYNC: ${{ inputs.use-rsync }}
 branding:
   icon: 'git-commit'
   color: 'green'
