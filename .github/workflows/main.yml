@@ -1,6 +1,9 @@
 name: Push File
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
 
 env:
   sha: $GITHUB_SHA
